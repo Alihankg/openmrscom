@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TechnoStudyveE-Junkie.iml" filepath="$PROJECT_DIR$/TechnoStudyveE-Junkie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestNGSetup.iml" filepath="$PROJECT_DIR$/TestNGSetup.iml" />
     </modules>
   </component>
 </project>
