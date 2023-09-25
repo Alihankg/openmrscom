@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="myTest1">
+        <classes>
+            <class name="openmrs.AC_02_Login"> </class>
+        </classes>
+    </test>
+
+    <test name="myTest2">
+        <classes>
+            <class name="openmrs.AC_04_RegPatient"> </class>
+        </classes>
+    </test>
+
+
+</suite>
+

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="myTest1">
+
+        <classes>
+            <class name="openmrs.AC03_Payment_Invalid_Message_Debit_Card"></class>
+        </classes>
+
+    </test>
+</suite>
+
