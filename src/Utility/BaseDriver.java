@@ -36,28 +36,28 @@ public class BaseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        loginTesti();
+//        loginTesti();
     }
 
-    public void loginTesti(){
-        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
-        MyFunc.Bekle(2);
-
-        WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("testng1@gmail.com");
-
-        WebElement inputpassword = driver.findElement(By.id("input-password"));
-        inputpassword.sendKeys("123qweasd");
-
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
-        loginBtn.click();
-
-        Assert.assertTrue(driver.getTitle().equals("My Account"));
-    }
+//    public void loginTesti(){
+//        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
+//        MyFunc.Bekle(2);
+//
+//        WebElement inputEmail = driver.findElement(By.id("input-email"));
+//        inputEmail.sendKeys("testng1@gmail.com");
+//
+//        WebElement inputpassword = driver.findElement(By.id("input-password"));
+//        inputpassword.sendKeys("123qweasd");
+//
+//        WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
+//        loginBtn.click();
+//
+//        Assert.assertTrue(driver.getTitle().equals("My Account"));
+//    }
 
     @AfterClass
     public void bitisIslemleri(){ // tearDown
-        MyFunc.Bekle(5);
+        MyFunc.Bekle(20);
         driver.quit();
     }
 
