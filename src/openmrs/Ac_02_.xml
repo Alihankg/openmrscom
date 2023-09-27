@@ -15,5 +15,21 @@
     </test>
 
 
+    <test name="myTest1">
+
+        <groups>
+            <run>
+                <include name="Smoke Test"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="openmrs.AC_05_MyAccount"></class>
+        </classes>
+
+    </test>
+
 </suite>
+
+
 

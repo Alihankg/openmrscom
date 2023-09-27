@@ -10,7 +10,7 @@ import static Utility.MyFunc.isClickable;
 
 public class AC_04_RegPatient extends BaseDriver {
 
-    @Test
+    @Test()
     public void RegPatient() {
         WebElement regPatient = isClickable(By.xpath("//i[@class='icon-user']"));
         regPatient.click();
