@@ -5,6 +5,8 @@ import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,7 +19,7 @@ public class AC_03_LogoutTest extends BaseDriver {
         }
 
         @Test(groups = {"Smoke Test"}, priority = 1)
-        public void test1() {
+        public void AC_03_LogoutTest() {
             driver.get("https://openmrs.org/");
             driver.manage().window().maximize();
 
@@ -48,12 +50,11 @@ public class AC_03_LogoutTest extends BaseDriver {
 
             WebElement loginButton = driver.findElement(By.id("loginButton"));
             loginButton.click();
+
+//            WebElement elementor1 = driver.findElement(By.cssSelector("[class='nav-item logout']"));
+//            elementor1.click();
         }
 
-        // WebDriver'ı kapatma işlemi burada yapılabilir
-//         @AfterMethod
-//         public void tearDown() {
-//             driver.quit();
-//         }
+
     }
 

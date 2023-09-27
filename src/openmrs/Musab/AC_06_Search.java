@@ -1,57 +1,58 @@
 package openmrs.Musab;
 
+
+import org.testng.annotations.Test;
 import Utility.BaseDriver;
+import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class AC_06_Search extends BaseDriver {
-    @BeforeClass
-    public void setUp() {
-        // WebDriver başlatma
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized"); // Pencereyi maksimize et
-        driver = new ChromeDriver(options);
-    }
-    @Test(groups = "Smoke Test", priority = 1)
-    public void test1() {
+    @Test(groups = "Smoke Test", priority = 2)
+    public void AC_06_Search() {
+
         driver.get("https://openmrs.org/");
-        clickByCssSelector("[class='zak-button']");
-        wait(2);
-        clickByXPath("(//span[@class='elementor-button-text'])[2]");
-        wait(2);
-        clickByXPath("(//span[@class='elementor-button-text'])[4]");
-        wait(2);
-        login("admin", "Admin123", "Inpatient Ward");
-    }
-    private void clickByCssSelector(String selector) {
-        WebElement element = driver.findElement(By.cssSelector(selector));
-        element.click();
-    }
-    private void clickByXPath(String xpath) {
-        WebElement element = driver.findElement(By.xpath(xpath));
-        element.click();
-    }
-    private void login(String username, String password, String ward) {
-        WebElement usernameField = driver.findElement(By.id("username"));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement wardField = driver.findElement(By.id(ward));
+        driver.manage().window().maximize();
 
-        usernameField.sendKeys(username);
-        passwordField.sendKeys(password);
-        wardField.click();
+        WebElement demo2 = driver.findElement(By.cssSelector("[class='zak-button']"));
+        demo2.click();
+        MyFunc.Bekle(2);
 
-        WebElement loginButton = driver.findElement(By.id("loginButton"));
-        loginButton.click();
-    }
-    private void wait(int seconds) {
-        try {
-            Thread.sleep(seconds * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        WebElement button = driver.findElement(By.xpath("(//span[@class='elementor-button-text'])[2]"));
+        button.click();
+        MyFunc.Bekle(2);
+
+        WebElement elementor = driver.findElement(By.xpath("(//span[@class='elementor-button-text'])[4]"));
+        elementor.click();
+        MyFunc.Bekle(2);
+
+        WebElement username12 = driver.findElement(By.id("username"));
+        username12.sendKeys("admin");
+
+        WebElement password12 = driver.findElement(By.id("password"));
+        password12.sendKeys("Admin123");
+
+        WebElement inpatientWard12 = driver.findElement(By.id("Inpatient Ward"));
+        inpatientWard12.click();
+
+        WebElement loginButton12 = driver.findElement(By.id("loginButton"));
+        loginButton12.click();
+
+        WebElement coreapps = driver.findElement(By.id("coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension"));
+        coreapps.click();
+
+        MyFunc.Bekle(2);
+        WebElement patient = driver.findElement(By.id("patient-search"));
+        patient.sendKeys("ahmet");
+        MyFunc.Bekle(2);
+        patient.clear();
+        MyFunc.Bekle(2);
+        WebElement patient1 = driver.findElement(By.id("patient-search"));
+        patient1.sendKeys("Rock Ma");
+
+        WebElement odd = driver.findElement(By.xpath("//tr[@class='odd'][1]"));
+        odd.click();
     }
 }

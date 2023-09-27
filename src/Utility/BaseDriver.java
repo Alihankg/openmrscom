@@ -57,7 +57,7 @@ public class BaseDriver {
 
     @AfterClass
     public void bitisIslemleri(){ // tearDown
-        MyFunc.Bekle(20);
+        MyFunc.Bekle(5);
         driver.quit();
     }
 
