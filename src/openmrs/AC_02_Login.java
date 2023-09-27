@@ -1,12 +1,11 @@
 package openmrs;
 
 import Utility.BaseDriver;
-import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import static Utility.MyFunc.clickable;
+import static Utility.MyFunc.isClickable;
 
 public class AC_02_Login extends BaseDriver {
     @Test
@@ -15,13 +14,13 @@ public class AC_02_Login extends BaseDriver {
         driver.get("https://openmrs.org");
         driver.manage().window().maximize();
 
-        WebElement demo = clickable(By.linkText("Demo"));
+        WebElement demo = isClickable(By.linkText("Demo"));
         demo.click();
 
-        WebElement expMRS2Demo = clickable(By.xpath("(//span[@class='elementor-button-text'])[4]"));
+        WebElement expMRS2Demo = isClickable(By.xpath("(//span[@class='elementor-button-text'])[4]"));
         expMRS2Demo.click();
 
-        WebElement userName = clickable(By.xpath("//input[@id='username']"));
+        WebElement userName = isClickable(By.xpath("//input[@id='username']"));
         userName.sendKeys("admin");
 
         WebElement psw = driver.findElement(By.xpath("//input[@id='password']"));
@@ -30,7 +29,7 @@ public class AC_02_Login extends BaseDriver {
         WebElement locationIW = driver.findElement(By.xpath("//li[@id='Inpatient Ward']"));
         locationIW.click();
 
-        WebElement logIn = clickable(By.xpath("//input[@id='loginButton']"));
+        WebElement logIn = isClickable(By.xpath("//input[@id='loginButton']"));
         logIn.click();
 
     }

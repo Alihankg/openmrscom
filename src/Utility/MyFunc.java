@@ -43,7 +43,10 @@ public class MyFunc {
         return bulundu;
     }
 
-    public static WebElement clickable(By e){
+    public static WebElement isClickable(By e){
         return BaseDriver.wait.until(ExpectedConditions.elementToBeClickable(e));
+    }
+    public static WebElement isPresent(By e){
+        return BaseDriver.wait.until(ExpectedConditions.presenceOfElementLocated(e));
     }
 }

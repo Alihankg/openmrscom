@@ -6,16 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import static Utility.MyFunc.clickable;
+import static Utility.MyFunc.isClickable;
 
 public class AC_04_RegPatient extends BaseDriver {
 
     @Test
     public void RegPatient() {
-        WebElement regPatient = clickable(By.xpath("//i[@class='icon-user']"));
+        WebElement regPatient = isClickable(By.xpath("//i[@class='icon-user']"));
         regPatient.click();
 
-        WebElement givenName = clickable(By.xpath("//input[@name='givenName']"));
+        WebElement givenName = isClickable(By.xpath("//input[@name='givenName']"));
         givenName.sendKeys("Emir");
 
         WebElement middleName = driver.findElement(By.xpath("//input[@name='middleName']"));
@@ -27,10 +27,10 @@ public class AC_04_RegPatient extends BaseDriver {
         WebElement nextBtn1 = driver.findElement(By.xpath("//icon[@class='fas fa-chevron-right']"));
         nextBtn1.click();
 
-        WebElement gender = clickable(By.xpath("//option[@value='M']"));
+        WebElement gender = isClickable(By.xpath("//option[@value='M']"));
         gender.click();
 
-        WebElement nextBtn2 = clickable(By.xpath("//button[@class='confirm right']"));
+        WebElement nextBtn2 = isClickable(By.xpath("//button[@class='confirm right']"));
         nextBtn2.click();
 
         WebElement day = driver.findElement(By.xpath("//input[@name='birthdateDay']"));
@@ -39,13 +39,13 @@ public class AC_04_RegPatient extends BaseDriver {
         WebElement month = driver.findElement(By.xpath("//option[@value='4']"));
         month.click();
 
-        WebElement year = clickable(By.xpath("//input[@name='birthdateYear']"));
+        WebElement year = isClickable(By.xpath("//input[@name='birthdateYear']"));
         year.sendKeys("1993");
 
         WebElement nextBtn3 = driver.findElement(By.xpath("//button[@class='confirm right']"));
         nextBtn3.click();
 
-        WebElement adress1 = clickable(By.xpath("//input[@id='address1']"));
+        WebElement adress1 = isClickable(By.xpath("//input[@id='address1']"));
         adress1.sendKeys("Yaprak Mah.");
 
         WebElement adress2 = driver.findElement(By.xpath("//input[@id='address2']"));
@@ -66,22 +66,22 @@ public class AC_04_RegPatient extends BaseDriver {
         WebElement nextBtn4 = driver.findElement(By.xpath("//button[@class='confirm right']"));
         nextBtn4.click();
 
-        WebElement number = clickable(By.xpath("//input[@name='phoneNumber']"));
+        WebElement number = isClickable(By.xpath("//input[@name='phoneNumber']"));
         number.sendKeys("1111111114");
 
         WebElement nextBtn5 = driver.findElement(By.xpath("//button[@class='confirm right']"));
         nextBtn5.click();
 
-        WebElement relationship = clickable(By.xpath("//option[@data-val='Parent']"));
+        WebElement relationship = isClickable(By.xpath("//option[@data-val='Parent']"));
         relationship.click();
 
-        WebElement relationshipName = clickable(By.xpath("//input[@placeholder='Person Name']"));
+        WebElement relationshipName = isClickable(By.xpath("//input[@placeholder='Person Name']"));
         relationshipName.sendKeys("Fatma");
 
         WebElement nextBtn6 = driver.findElement(By.xpath("//button[@class='confirm right']"));
         nextBtn6.click();
 
-        WebElement confirm = clickable(By.xpath("//input[@value='Confirm']"));
+        WebElement confirm = isClickable(By.xpath("//input[@value='Confirm']"));
         confirm.click();
 
         MyFunc.Bekle(2);
