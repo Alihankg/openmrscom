@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="myTest1">
+
+        <classes>
+            <class name="openmrs.Musab.AC_01_Warning"></class>
+            <class name="openmrs.Musab.AC_03_LogoutTest"></class>
+            <class name="openmrs.Musab.AC_06_Search"></class>
+        </classes>
+
+    </test>
+</suite>
+
