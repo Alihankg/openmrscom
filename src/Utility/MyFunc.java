@@ -2,6 +2,7 @@ package Utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class MyFunc {
     public static void Bekle(int sn){
 
         try {
-            Thread.sleep(sn*1000l);
+            Thread.sleep(sn* 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +33,7 @@ public class MyFunc {
     public static boolean listContainsString(List<WebElement> list, String aranacakKelime){
         boolean bulundu=false;
         for(WebElement e: list){
-            if (e.getText().toLowerCase().equals(aranacakKelime.toLowerCase()))
+            if (e.getText().equalsIgnoreCase(aranacakKelime))
             {
                 bulundu=true;
                 break;
@@ -40,5 +41,9 @@ public class MyFunc {
         }
 
         return bulundu;
+    }
+
+    public static WebElement clickable(By e){
+        return BaseDriver.wait.until(ExpectedConditions.elementToBeClickable(e));
     }
 }
